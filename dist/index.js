@@ -22,7 +22,7 @@ export default function apiMiddleware() {
         try {
             const response = yield fetch(request.url, {
                 method: request.method ? request.method : "GET",
-                headers: request.header ? request.header : {},
+                headers: request.headers ? request.headers : {},
                 body: request.body ? JSON.stringify(request.body) : undefined
             });
             let data = yield response.json();
